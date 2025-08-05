@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jharkhand Tourism | Land of Forests & Waterfalls</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #2e7d32;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70%;
+            height: 3px;
+            background: linear-gradient(90deg, #2e7d32, #ff9800);
+        }
+
+        /* Ad Container */
+        .ad-container {
+            width: 100%;
+            padding: 15px 0;
+            background: #f0f0f0;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: #2e7d32;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo span {
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff9800;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #e65100;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Destinations Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .destination-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .destination-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2e7d32;
+        }
+
+        .destination-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* Booking Section */
+        .booking {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: #2e7d32;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #ff9800;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff9800;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: #2e7d32;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: all 0.5s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .burger {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Ad -->
+    <div class="ad-container container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_HEADER_AD_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Jharkhand_Logo.png" alt="Jharkhand Tourism">
+            <span>Jharkhand Tourism</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#adventure">Adventure</a></li>
+            <li><a href="#culture">Tribal Culture</a></li>
+            <li><a href="#booking">Book Tour</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="burger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Explore the Wild Beauty of Jharkhand</h1>
+            <p>Discover breathtaking waterfalls, rich wildlife, vibrant tribal culture, and thrilling adventures in the heart of India</p>
+            <a href="#booking" class="btn">Book a Tour Now</a>
+        </div>
+    </section>
+
+    <!-- Mid-Page Ad -->
+    <div class="ad-container container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_CONTENT_AD_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Popular Destinations -->
+    <section class="destinations container" id="destinations">
+        <div class="section-title">
+            <h2>Top Tourist Destinations</h2>
+            <p>Explore the most beautiful places in Jharkhand</p>
+        </div>
+        <div class="destination-grid">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1591195853828-11bb59b5f687?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dassam Falls">
+                <div class="card-content">
+                    <h3>Dassam Falls</h3>
+                    <p>A stunning waterfall near Ranchi with a 144-foot drop, surrounded by lush greenery and perfect for nature lovers.</p>
+                    <a href="#dassam" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1585409678983-0745d8f4e293?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Betla National Park">
+                <div class="card-content">
+                    <h3>Betla National Park</h3>
+                    <p>Home to tigers, elephants & leopards in Palamau district. Experience jungle safari and rich biodiversity.</p>
+                    <a href="#betla" class="btn">Explore More</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1585506942812-0b7b5d9e3a1f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jagannath Temple">
+                <div class="card-content">
+                    <h3>Jagannath Temple</h3>
+                    <p>Ancient temple in Ranchi resembling Puri's Jagannath Temple, showcasing magnificent architecture and spirituality.</p>
+                    <a href="#jagannath" class="btn">Explore More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Section -->
+    <section class="adventure container" id="adventure">
+        <div class="section-title">
+            <h2>Adventure Activities</h2>
+            <p>Get your adrenaline pumping with these thrilling experiences</p>
+        </div>
+        <div class="destination-grid">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Paragliding">
+                <div class="card-content">
+                    <h3>Paragliding in Ranchi</h3>
+                    <p>Experience the thrill of flying over the beautiful landscapes of Jharkhand with professional instructors.</p>
+                    <a href="#paragliding" class="btn">Book Activity</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Trekking">
+                <div class="card-content">
+                    <h3>Trekking in Netarhat</h3>
+                    <p>Explore the lush green forests and hills of Netarhat, known as the "Queen of Chotanagpur".</p>
+                    <a href="#trekking" class="btn">Book Activity</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1515444744559-7be63e1600de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="River Rafting">
+                <div class="card-content">
+                    <h3>River Rafting in Damodar</h3>
+                    <p>Challenge yourself with exciting rapids on the Damodar river, suitable for beginners and experts.</p>
+                    <a href="#rafting" class="btn">Book Activity</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribal Culture Section -->
+    <section class="culture container" id="culture">
+        <div class="section-title">
+            <h2>Tribal Culture</h2>
+            <p>Experience the rich heritage of Jharkhand's indigenous communities</p>
+        </div>
+        <div class="destination-grid">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tribal Dance">
+                <div class="card-content">
+                    <h3>Traditional Dances</h3>
+                    <p>Witness vibrant performances like Chhau, Santhal, and Jhumair that reflect tribal life and traditions.</p>
+                    <a href="#dances" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Handicrafts">
+                <div class="card-content">
+                    <h3>Art & Handicrafts</h3>
+                    <p>Explore exquisite tribal art forms like Sohrai paintings, bamboo crafts, and metal work.</p>
+                    <a href="#handicrafts" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Tribal Cuisine">
+                <div class="card-content">
+                    <h3>Tribal Cuisine</h3>
+                    <p>Savor authentic flavors with dishes like Rugra, Bamboo Shoot Curry, and Handia (rice beer).</p>
+                    <a href="#cuisine" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your Tour</h2>
+                <p>Plan your perfect Jharkhand adventure with us</p>
+            </div>
+            <div class="booking-form">
+                <form id="tourForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tour">Select Tour Package</label>
+                        <select id="tour" required>
+                            <option value="">-- Select Package --</option>
+                            <option value="waterfall">Waterfall Explorer (3 Days)</option>
+                            <option value="wildlife">Wildlife Safari (4 Days)</option>
+                            <option value="cultural">Tribal Culture Tour (5 Days)</option>
+                            <option value="adventure">Adventure Combo (6 Days)</option>
+                            <option value="custom">Custom Package</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Travel Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Special Requirements</label>
+                        <textarea id="message" placeholder="Any special requests or requirements"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Ad -->
+    <div class="ad-container container">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_FOOTER_AD_SLOT"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Jharkhand Tourism</h3>
+                    <p>Discover the natural beauty, rich culture, and thrilling adventures that make Jharkhand a unique travel destination in India.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: white; text-decoration: none; line-height: 2;">Home</a></li>
+                        <li><a href="#destinations" style="color: white; text-decoration: none; line-height: 2;">Destinations</a></li>
+                        <li><a href="#adventure" style="color: white; text-decoration: none; line-height: 2;">Adventure</a></li>
+                        <li><a href="#culture" style="color: white; text-decoration: none; line-height: 2;">Tribal Culture</a></li>
+                        <li><a href="#booking" style="color: white; text-decoration: none; line-height: 2;">Book Tour</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Tourism House, Ranchi, Jharkhand 834001</p>
+                        <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                        <p><i class="fas fa-envelope"></i> info@jharkhandtourism.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Jharkhand Tourism. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff9800;"></i> for Jharkhand</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.burger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.burger i').classList.remove('fa-times');
+            });
+        });
+
+        // Form Submission
+        document.getElementById('tourForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const tour = document.getElementById('tour').value;
+            
+            // Show success message
+            alert(`Thank you ${name} for your booking request!\nWe've received your interest in our ${tour} package.\nOur team will contact you at ${email} shortly.`);
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to top
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize AdSense
+        (adsbygoogle = window.adsbygoogle || []).push({});
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.destination-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'all 0.5s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
